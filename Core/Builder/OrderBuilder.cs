@@ -12,7 +12,6 @@
 
 using Core.Enums;
 using Core.Error;
-using Core.Error.Order;
 using Core.OrderRequest;
 using FluentResults;
 
@@ -44,7 +43,7 @@ public class OrderBuilder : IOrderBuilder
     {
         return Result.FailIf(
             portionQuantity <= 0,
-            new OrderError(ErrorMessages.PORTION_QUANTITY_ZERO, _id, index, 0, subject)
+            new OrderError(CoreErrorMessages.PORTION_QUANTITY_ZERO, _id, index, 0, subject)
         );
     }
     
@@ -56,7 +55,7 @@ public class OrderBuilder : IOrderBuilder
         return Result.FailIf(
             result == null,
             new OrderError(
-                ErrorMessages.SALAD_COMPONENT_PORTION_QUANTITY_ZERO,
+                CoreErrorMessages.SALAD_COMPONENT_PORTION_QUANTITY_ZERO,
                 _id,
                 index,
                 components.IndexOf(result!),

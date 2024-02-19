@@ -1,6 +1,6 @@
 using FluentResults;
 
-namespace Core.Error.Order;
+namespace Core.Error;
 
 public class OrderError : IError
 {

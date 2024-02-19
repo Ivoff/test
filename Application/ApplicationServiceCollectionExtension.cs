@@ -1,16 +1,17 @@
 using Application.Command;
 using Application.Handler;
 using FluentResults;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application;
 
 public static class ApplicationServiceCollectionExtension
 {
-    public static IServiceCollection AddApplication(this IServiceCollection services)
+    public static WebApplicationBuilder AddApplication(this WebApplicationBuilder builder)
     {
-        services.AddScoped<ICommandHandler<OrderCommand, Task<Result>>, OderCommandHandler>();
+        builder.Services.AddScoped<ICommandHandler<OrderCommand, Task<Result>>, OderCommandHandler>();
         
-        return services;
+        return builder;
     }
 }
