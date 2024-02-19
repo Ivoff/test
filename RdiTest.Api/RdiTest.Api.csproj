@@ -12,9 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj" />
-    <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\Infra\Infra.csproj" />
+    <ProjectReference Include="..\RdiTest.Application\RdiTest.Application.csproj" />
+    <ProjectReference Include="..\RdiTest.Core\RdiTest.Core.csproj" />
+    <ProjectReference Include="..\RdiTest.Infra\RdiTest.Infra.csproj" />
   </ItemGroup>
 
 </Project>

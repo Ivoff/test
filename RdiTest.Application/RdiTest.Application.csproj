@@ -4,11 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>Application</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\Infra\Infra.csproj" />
+    <ProjectReference Include="..\RdiTest.Core\RdiTest.Core.csproj" />
+    <ProjectReference Include="..\RdiTest.Infra\RdiTest.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>

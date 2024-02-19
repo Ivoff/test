@@ -2,7 +2,7 @@ using Application;
 using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers;
+namespace RdiTest.Api.Controllers;
 
 public class BasicController : ControllerBase
 {

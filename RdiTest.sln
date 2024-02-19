@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{88D4DC10-BDFF-4A91-9A88-B5E8DEC6882C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RdiTest.Api", "RdiTest.Api\RdiTest.Api.csproj", "{88D4DC10-BDFF-4A91-9A88-B5E8DEC6882C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{1D31CBBC-4A6F-48AB-88AD-023E4E852ED4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RdiTest.Application", "RdiTest.Application\RdiTest.Application.csproj", "{1D31CBBC-4A6F-48AB-88AD-023E4E852ED4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{66A6559A-0981-4C89-AFCF-F1FE61A87030}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RdiTest.Core", "RdiTest.Core\RdiTest.Core.csproj", "{66A6559A-0981-4C89-AFCF-F1FE61A87030}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{E8DE37C3-BC31-451A-BDD5-1E0A91FC8B29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RdiTest.Infra", "RdiTest.Infra\RdiTest.Infra.csproj", "{E8DE37C3-BC31-451A-BDD5-1E0A91FC8B29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

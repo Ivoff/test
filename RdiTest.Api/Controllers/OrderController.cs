@@ -3,7 +3,7 @@ using Application.Command;
 using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers;
+namespace RdiTest.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
