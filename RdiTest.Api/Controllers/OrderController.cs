@@ -17,6 +17,13 @@ public class OrderController : BasicController
     }
 
     [HttpPost]
-    public async Task<IActionResult> PostOrder([FromForm] OrderCommand command, CancellationToken cancellationToken) 
+    public async Task<IActionResult> PostOrder([FromBody] OrderCommand command, CancellationToken cancellationToken) 
         => await Handler(command, _commandHandler, cancellationToken);
+    
+
+    [HttpPost("a")]
+    public async Task<IActionResult> Post([FromBody] OrderCommand command, CancellationToken cancellationToken) 
+        => await Handler(command, _commandHandler, cancellationToken);
+
+    
 }

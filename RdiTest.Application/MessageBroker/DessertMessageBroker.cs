@@ -13,7 +13,7 @@ public class DessertMessageBroker : IOrderMessageBroker<DessertOrderEvent>
     private readonly MessageBrokerOptions _messageOptions;
     private ProducerConfig Config { get; init; }
 
-    public DessertMessageBroker(IOptions<MessageBrokerOptions> messageOptions)
+    public DessertMessageBroker( IOptions<MessageBrokerOptions> messageOptions)
     {
         _messageOptions = messageOptions.Value;
         Config = new ProducerConfig()
