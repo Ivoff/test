@@ -1,13 +1,18 @@
+using FluentResults;
+
 namespace Core.Builder;
 
-public class OrderBuilderDirector
+/*
+ * This is the general order builder, it does not make much sense since we only have one variation of the "Order" object.
+ * But it would make sense if it was extended to support discrete orders like combos of sort.
+ */
+
+public class OrderBuilderDirector<T> where T: IOrderBuilder, new()
 {
-    public IOrderBuilder Builder { get; init; }
+    public required T Builder { get; init; }
 
-    private OrderBuilderDirector() { }
-
-    public OrderBuilderDirector(IOrderBuilder builder)
+    public OrderBuilderDirector()
     {
-        Builder = builder;
+        Builder = new T();
     }
 }

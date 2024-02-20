@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RdiTest.Api.Controllers;
 
+/*
+ * Could have have used MediatR here but decided against because there is only one endpoint 
+ */
+
 [ApiController]
 [Route("[controller]")]
 public class OrderController : BasicController
@@ -17,6 +21,6 @@ public class OrderController : BasicController
     }
 
     [HttpPost]
-    public async Task<IActionResult> PostOrder([FromForm] OrderCommand command, CancellationToken cancellationToken) 
+    public async Task<IActionResult> PostOrder([FromBody] OrderCommand command, CancellationToken cancellationToken) 
         => await Handler(command, _commandHandler, cancellationToken);
 }

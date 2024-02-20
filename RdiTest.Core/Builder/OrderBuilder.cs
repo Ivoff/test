@@ -23,19 +23,15 @@ public class OrderBuilder : IOrderBuilder
     private IList<DessertOrder> _dessertOrders = new List<DessertOrder>();
     private IList<FriesOrder> _friesOrders = new List<FriesOrder>();
     private IList<GrillOrder> _grillOrders = new List<GrillOrder>();
+    private IList<DrinkOrder> _drinkOrders = new List<DrinkOrder>();
     private IList<SaladOrder> _saladOrders = new List<SaladOrder>();
+    
 
     private List<Result> _results = new List<Result>();
 
     public IOrderBuilder AddId(Guid id)
     {
         _id = id;
-        return this;
-    }
-
-    public IOrderBuilder AddId()
-    {
-        _id = Guid.NewGuid();
         return this;
     }
 
@@ -106,6 +102,20 @@ public class OrderBuilder : IOrderBuilder
         return this;
     }
 
+    public IOrderBuilder AddDrinkOrder(DrinkType drinkType, DrinkSize drinkSize, int portionQuantity)
+    {
+        _results.Add(
+            PortionQuantityChecker(portionQuantity, 
+                _drinkOrders.Count, 
+                $"{nameof(DrinkType)} {drinkType} | {nameof(DrinkSize)} {drinkSize}")
+        );
+        
+        if (_results.Last().IsSuccess)
+            _drinkOrders.Add(new DrinkOrder(drinkType, drinkSize, portionQuantity));
+
+        return this;
+    }
+    
     public IOrderBuilder AddSaladOrder(List<SaladOrderComponent> components, int quantity)
     {
         _results.Add(SaladComponentPortionQuantityChecker(components, _saladOrders.Count));
@@ -127,6 +137,7 @@ public class OrderBuilder : IOrderBuilder
                 DessertOrders = _dessertOrders,
                 FriesOrders = _friesOrders,
                 GrillOrders = _grillOrders,
+                DrinkOrders = _drinkOrders,
                 SaladOrders = _saladOrders
             } 
             : buildResult;
